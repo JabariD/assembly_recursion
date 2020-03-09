@@ -1,7 +1,7 @@
 # MIPS Recursion Project -- Payton Dennis
 ## @02877343 -- Base: 33
 
-*Note: I understand the directions were listed to use the STACK to store the result which would have been an easier method than I chose. But what made sense to me was to STORE my result using **.text** strings.* 
+*Note: I understand the directions were listed to use the STACK to store the result which would have been an easier method than I chose. But what made sense to me was to STORE my result using **.data** strings.* 
 Besides this change I followed the directions to the best of my ability.
 
 ####  Basic High-level Idea of Algorithm:
