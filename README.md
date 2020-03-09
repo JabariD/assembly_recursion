@@ -11,7 +11,7 @@ Peliminary Step: Check tabs/spaces and valid characters.
 3. If c does not need to be multiplied go to step 8. If c does:
 4.  Multiply **d** by base (33).
 5. Store in **tempAnswer** (string in memory).
-6. Check if multiply again by base
+6. Check if multiply again by 33
 7. If yes go to step 4. If not continue:
 8. Add to **tempAnswer** to **finalAnswer**.
 9. If done multiplying, check if done with characters: If no go to step 2, if yes continue.
