@@ -8,7 +8,7 @@ Besides this change I followed the directions to the best of my ability.
 Peliminary Step: Check tabs/spaces and valid characters. 
 1.  Recursively call each character in our string; (which I will call **c**).
 2.  Convert c (starting with the rightmost digit; backtrack) to its decimal representation; (which I will call **d**).
-3. If c does not need to be multiplied go to step 8If c does:
+3. If c does not need to be multiplied go to step 8. If c does:
 4.  Multiply **d** by base (33).
 5. Store in **tempAnswer** (string in memory).
 6. Check if multiply again by base
