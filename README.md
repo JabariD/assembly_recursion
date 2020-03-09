@@ -10,7 +10,7 @@ Peliminary Step: Check tabs/spaces and valid characters.
 2.  Convert c (starting with the rightmost digit; backtrack) to its decimal representation; (which I will call **d**).
 3. If c does not need to be multiplied go to step 8. If c does:
 4.  Multiply **d** by base (33).
-5. Store in **tempAnswer** (string in memory).
+5. Store in **tempAnswer** (string in memory) which will be our new **d**.
 6. Check if multiply again by 33
 7. If yes go to step 4. If not continue:
 8. Add to **tempAnswer** to **finalAnswer**.
