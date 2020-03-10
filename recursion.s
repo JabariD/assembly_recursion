@@ -179,3 +179,7 @@ li $v0, 4               # read string
 la $a0, errorMSG        # in memory called error
 syscall                 # do it
 j exit                  # print error message then exit
+
+# Recursive Converter untouchable: 
+# s7 - basecase checcker: 1 ; s6 - num of characters; s5 - multiply controller; s0/a0: character
+recursive_converter:
