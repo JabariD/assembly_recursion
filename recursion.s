@@ -36,3 +36,9 @@ syscall                 # Do it
 # Tabs/Spaces Management
 
 # remove leading spaces/tabs
+
+removeloop:
+     addi $t0, $zero, 32               # ASCII code for space = 32
+     addi $t1, $zero, 9                # ASCII code for tab = 9
+     lb $s1, 0($a0)                    # $s1 = curr character
+     beq $s1, $t0, next                # leading space, we can continue 
