@@ -84,3 +84,35 @@ checkerloopnext:
      addi $a0, $a0, 1                  # increment character to check
      lb $s1, 0($a0)                    # store it in $s1
      j checker                         # jump back to checker
+     
+properformat:
+     # for each character until null key reached, increment counter, check if counter greater than 21 if true -> invalid, check that character in range, it passes
+     addi $t5, $zero, 21                # init check to see if more than 21 characters read
+     addi $s4, $s4, 0                  # init counter to compare with 5
+     lb $s1, 0($s6)                    # load character into $s1 
+     
+     beq $s4, $t5, invalid             # check counter > 4, invalid input
+     beq $s1, $t3, continue             # check NULL character, let's convert to decimal
+     beq $s1, $t4, continue             # check ENTER character, let's convert to decimal
+     
+     slti $t7, $s1, 48                 # if char less than '0': true
+     bne $t7, $zero, invalid           # for it to pass it should be 0(FALSE), so we know it's invalid 
+     slti $t7, $s1, 58                 # less than or equal to: '9'
+     bne $t7, $zero, properformatloop  # if this is a number, we are good ---> go to next character
+     
+     slti $t7, $s1, 65                 # if char less than '65(A)': true
+     bne $t7, $zero invalid            # for it to pass it should be 0(FALSE), so we know it's invalid
+     slti $t7, $s1, 88                 # less than or equal to '87(W)': true
+     bne $t7, $zero, properformatloop  # if this is a uppercase letter, we are good ---> go to next character
+     
+     slti $t7, $s1, 97                 # if char less than '97(a)': true
+     bne $t7, $zero invalid            # for it to pass it should be 0(FALSE), so we know it's invalid 
+     slti $t7, $s1, 120                # less than or equal to '119(w)': true
+     bne $t7, $zero, properformatloop  # if this is a lowercase letter, we are good ---> go to next character
+     
+     j invalid                         # if character is greater than a lowercase letter (catch-all)
+     
+properformatloop:
+     addi $s4, $s4, 1                  # increment counter to check if # of characters > 5
+     addi $s6, $s6, 1                  # go to the next character
+     j properformat                    # jump back to properformat
