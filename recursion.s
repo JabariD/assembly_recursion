@@ -50,3 +50,8 @@ next:
      j removeloop                      # go back to new character
      
 ## process 2: after we see OUR last character and if we see a space/tab --> ONLY tabs/spaces allowed else INVALID! if reach NULL, we're good!
+
+characterloopinit:
+     la $s3, new_userInput             # load string into $s3
+     la $s6, new_userInput             # PROPERFORMAT - we are manipulating the address of $s3, we need a copy of where the beginning of the address starts!
+     addi $s2, $s2, 0                  # init INDEX for new string
