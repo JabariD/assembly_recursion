@@ -141,12 +141,12 @@ addi $k0, $k0, -48      # convert char from ascii into decimal
 bne $k0, $zero, open_spot_next_ch # check if char equals zero
 
 print_continue_loop:
-addi $s3, $s3, 1 # counter to hit
-addi $s0, $s0, 1 #next ch
+addi $s3, $s3, 1        # counter to hit
+addi $s0, $s0, 1        # next ch
 beq $s3, $t0, start_printing
 j printresult 
 
 laststoreAddyinRegprint:
-add $t3, $zero, $s0
-addi $s0, $s0, -1
-j print_continue_loop
+add $t3, $zero, $s0     # store address
+addi $s0, $s0, -1       # we added one to our index to just check, we can decrement it now
+j print_continue_loop   # jump back to loop proto
