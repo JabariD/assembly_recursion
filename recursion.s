@@ -70,3 +70,9 @@ characterloopnext:
      addi $a0, $a0, 1                  # move to next character
      lb $s1, 0($a0)                    # store next character in $s1
      j characterloop                   # jump back to character loop 
+     
+checker:
+     addi $t3, $zero, 0                # check for NULL end
+     addi $t4, $zero, 10               # check for (ENTER) character     
+     beq $s1, $t0, checkerloopnext     # perfectly fine
+     beq $s1, $t1, checkerloopnext     # perfectly fine 
