@@ -135,3 +135,7 @@ jal recursive_converter # <-----------------------------------------------
 la $s0, finalAnswer
 addi $t0, $zero, 50     # how we know we're done looping
 addi $s3, $zero, 0      # counter to hit 50 characters
+printresult:
+lb $k0, 0($s0)          # load character into finalAnswer
+addi $k0, $k0, -48      # convert char from ascii into decimal
+bne $k0, $zero, open_spot_next_ch # check if char equals zero
