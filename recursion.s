@@ -127,8 +127,11 @@ addi $s6, $s4, 0     # s6 - base case checker
 addi $s5, $s5, -1    # s5 - multiply Controller
 addi $t2, $s5, 0     # cMC - copy Multiply Controller     
 
-la $a0, new_userInput  # pass input address to function
-la $s0, new_userInput  # get character by character
+la $a0, new_userInput   # pass input address to function
+la $s0, new_userInput   # get character by character
 jal recursive_converter # <-----------------------------------------------
 
 # Print result
+la $s0, finalAnswer
+addi $t0, $zero, 50     # how we know we're done looping
+addi $s3, $zero, 0      # counter to hit 50 characters
