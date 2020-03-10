@@ -150,3 +150,11 @@ laststoreAddyinRegprint:
 add $t3, $zero, $s0     # store address
 addi $s0, $s0, -1       # we added one to our index to just check, we can decrement it now
 j print_continue_loop   # jump back to loop proto
+
+open_spot_next_ch:
+addi $s0, $s0, 1        # go to next character
+lb $k0, 0($s0)          # store in k0
+addi $k0, $k0, -48      # convert ascii to decimal
+beq $k0, $zero, laststoreAddyinRegprint
+addi $s0, $s0, -1       # go back to last character
+j print_continue_loop   
