@@ -91,7 +91,7 @@ properformat:
      addi $s4, $s4, 0                  # init counter to compare with 5
      lb $s1, 0($s6)                    # load character into $s1 
      
-     beq $s4, $t5, invalid             # check counter > 4, invalid input
+     beq $s4, $t5, invalid             # check counter > 21, invalid input
      beq $s1, $t3, continue             # check NULL character, let's convert to decimal
      beq $s1, $t4, continue             # check ENTER character, let's convert to decimal
      
