@@ -158,3 +158,12 @@ addi $k0, $k0, -48      # convert ascii to decimal
 beq $k0, $zero, laststoreAddyinRegprint
 addi $s0, $s0, -1       # go back to last character
 j print_continue_loop   
+
+start_printing:
+la $a2, finalAnswer     # load address of a2
+addi $t3, $t3, -1       # decremnt t3
+lb $a0, 0($t3)          # load byte
+li $v0, 11 
+syscall                 # print ch
+beq $t3, $a2, exit      # if t3 == a2 we are done!
+j start_printing        # otherwise jump back to start_printing
