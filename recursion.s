@@ -145,3 +145,8 @@ addi $s3, $s3, 1 # counter to hit
 addi $s0, $s0, 1 #next ch
 beq $s3, $t0, start_printing
 j printresult 
+
+laststoreAddyinRegprint:
+add $t3, $zero, $s0
+addi $s0, $s0, -1
+j print_continue_loop
