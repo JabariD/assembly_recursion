@@ -139,3 +139,9 @@ printresult:
 lb $k0, 0($s0)          # load character into finalAnswer
 addi $k0, $k0, -48      # convert char from ascii into decimal
 bne $k0, $zero, open_spot_next_ch # check if char equals zero
+
+print_continue_loop:
+addi $s3, $s3, 1 # counter to hit
+addi $s0, $s0, 1 #next ch
+beq $s3, $t0, start_printing
+j printresult 
