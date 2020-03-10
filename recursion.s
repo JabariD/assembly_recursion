@@ -65,3 +65,8 @@ characterloop:
      
      addi $s3, $s3, 1                  # next space for character
      j characterloopnext               # we can continue, go to next character
+     
+characterloopnext:
+     addi $a0, $a0, 1                  # move to next character
+     lb $s1, 0($a0)                    # store next character in $s1
+     j characterloop                   # jump back to character loop 
