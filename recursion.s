@@ -167,3 +167,15 @@ li $v0, 11
 syscall                 # print ch
 beq $t3, $a2, exit      # if t3 == a2 we are done!
 j start_printing        # otherwise jump back to start_printing
+
+# Exit Program
+exit:
+li $v0, 10              # Exit Program Code
+syscall                 # Do it
+
+
+invalid:
+li $v0, 4               # read string
+la $a0, errorMSG        # in memory called error
+syscall                 # do it
+j exit                  # print error message then exit
