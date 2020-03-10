@@ -48,3 +48,5 @@ removeloop:
 next:
      addi $a0, $a0, 1                  # move to next character
      j removeloop                      # go back to new character
+     
+## process 2: after we see OUR last character and if we see a space/tab --> ONLY tabs/spaces allowed else INVALID! if reach NULL, we're good!
