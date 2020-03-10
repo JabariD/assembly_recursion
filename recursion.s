@@ -79,3 +79,8 @@ checker:
      beq $s1, $t4, properformat        # we are good to go! (enter key)
      beq $s1, $t3, properformat        # we are good to go! (null character key)
      j invalid                         # if all else fails --> invalid!
+     
+checkerloopnext:
+     addi $a0, $a0, 1                  # increment character to check
+     lb $s1, 0($a0)                    # store it in $s1
+     j checker                         # jump back to checker
