@@ -126,3 +126,7 @@ addi $s7, $zero, 1   # base case checker
 addi $s6, $s4, 0     # s6 - base case checker
 addi $s5, $s5, -1    # s5 - multiply Controller
 addi $t2, $s5, 0     # cMC - copy Multiply Controller     
+
+la $a0, new_userInput  # pass input address to function
+la $s0, new_userInput  # get character by character
+jal recursive_converter
