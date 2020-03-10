@@ -55,3 +55,8 @@ characterloopinit:
      la $s3, new_userInput             # load string into $s3
      la $s6, new_userInput             # PROPERFORMAT - we are manipulating the address of $s3, we need a copy of where the beginning of the address starts!
      addi $s2, $s2, 0                  # init INDEX for new string
+     
+characterloop:
+     beq $s1, $t0 checkerloopnext      # check that character not space if it is stop
+     beq $s1, $t1 checkerloopnext      # check that character not tab if it is stop
+     beq $s1, $t3, checkerloopnext     # check that character not NULL character if it is stop 
