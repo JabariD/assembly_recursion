@@ -26,3 +26,9 @@ li $t1, 51              # get 3 in ascii
 sb $t1, 0($t0)          # store 3 in ascii
 addi $t0, $t0, 1        # go to next ch spot
 sb $t1, 0($t0)          # store 3 in ascii
+
+# Read 100ch from user
+li $v0, 8               # Read string code is 8
+la $a0, userInput       # Desired location in userInput
+li $a1, 101             # 101 characters to be read
+syscall                 # Do it
