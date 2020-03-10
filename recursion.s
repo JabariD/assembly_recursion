@@ -32,3 +32,7 @@ li $v0, 8               # Read string code is 8
 la $a0, userInput       # Desired location in userInput
 li $a1, 101             # 101 characters to be read
 syscall                 # Do it
+
+# Tabs/Spaces Management
+
+# remove leading spaces/tabs
