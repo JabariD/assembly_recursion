@@ -20,7 +20,6 @@ finalAnswer: .space 100
 # NOTE: characters are reversed!
 
 main:
-#init base
 addi $gp, $zero, 0      # init -- carry for Final Addition
 la $t0, baseNumber      # load address of baseNumber
 li $t1, 51              # get 3 in ascii
