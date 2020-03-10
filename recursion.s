@@ -42,3 +42,9 @@ removeloop:
      addi $t1, $zero, 9                # ASCII code for tab = 9
      lb $s1, 0($a0)                    # $s1 = curr character
      beq $s1, $t0, next                # leading space, we can continue 
+     beq $s1, $t1, next                # leading tab, we can continue
+     j characterloopinit               # character is NOT a leading space or tab --> begin to store into string
+     
+next:
+     addi $a0, $a0, 1                  # move to next character
+     j removeloop                      # go back to new character
