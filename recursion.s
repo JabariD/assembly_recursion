@@ -7,7 +7,7 @@ new_userInput: .space 101
 baseNumber: .space 3
 currNumber: .space 3
 
-# Store baseNumber * currNumber into tempAnswer. # do it counte rnumber of times
+# Store baseNumber * currNumber into tempAnswer. # do it counter number of times
 tempAnswer: .space 100       
 # Temporary Storage
 tempProduct: .space 100
