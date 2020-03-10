@@ -116,3 +116,13 @@ properformatloop:
      addi $s4, $s4, 1                  # increment counter to check if # of characters > 5
      addi $s6, $s6, 1                  # go to the next character
      j properformat                    # jump back to properformat
+     
+     
+# JAL into Base-33 Converter Function
+continue:
+beq $s4, $zero, invalid # one last check
+
+addi $s7, $zero, 1   # base case checker
+addi $s6, $s4, 0     # s6 - base case checker
+addi $s5, $s5, -1    # s5 - multiply Controller
+addi $t2, $s5, 0     # cMC - copy Multiply Controller     
