@@ -76,3 +76,6 @@ checker:
      addi $t4, $zero, 10               # check for (ENTER) character     
      beq $s1, $t0, checkerloopnext     # perfectly fine
      beq $s1, $t1, checkerloopnext     # perfectly fine 
+     beq $s1, $t4, properformat        # we are good to go! (enter key)
+     beq $s1, $t3, properformat        # we are good to go! (null character key)
+     j invalid                         # if all else fails --> invalid!
