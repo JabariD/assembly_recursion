@@ -130,3 +130,5 @@ addi $t2, $s5, 0     # cMC - copy Multiply Controller
 la $a0, new_userInput  # pass input address to function
 la $s0, new_userInput  # get character by character
 jal recursive_converter
+
+# Print result
