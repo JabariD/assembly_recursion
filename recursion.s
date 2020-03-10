@@ -60,3 +60,8 @@ characterloop:
      beq $s1, $t0 checkerloopnext      # check that character not space if it is stop
      beq $s1, $t1 checkerloopnext      # check that character not tab if it is stop
      beq $s1, $t3, checkerloopnext     # check that character not NULL character if it is stop 
+     
+     sb $s1, 0($s3)                    # otherwise store it in string
+     
+     addi $s3, $s3, 1                  # next space for character
+     j characterloopnext               # we can continue, go to next character
