@@ -223,3 +223,7 @@ j insertDigits
 lower_char:
 addi $t6, $t0, -87          # subtract by a to get decimal value
 j insertDigits
+
+
+insertDigits:
+la $s2, currNumber          # get address of currNumber in .data
