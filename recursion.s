@@ -199,3 +199,9 @@ basecase:
 lb $t0, 0($s0)              # load ch into t0
 
 addi $s0, $s0, -1           # move to prev character
+
+# get string representation of ch (2 digit at most) and put both digits (decimal number in ascii) in currNumber
+# position:  0 1
+# C would be 2 1.
+slti $t6, $t0, 58           # less than or equal to: '9'
+bne $t6, $zero, num_char    # if this is a number, we are good ---> go to next character
