@@ -197,3 +197,5 @@ jal recursive_converter     # recursively call our function
 
 basecase: 
 lb $t0, 0($s0)              # load ch into t0
+
+addi $s0, $s0, -1           # move to prev character
