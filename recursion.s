@@ -227,3 +227,7 @@ j insertDigits
 
 insertDigits:
 la $s2, currNumber          # get address of currNumber in .data
+
+addi $t9, $zero, 10
+div $t6, $t9
+mfhi $t9                    # get digit in one's place
