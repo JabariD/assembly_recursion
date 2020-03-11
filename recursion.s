@@ -234,3 +234,7 @@ mfhi $t9                    # get digit in one's place
 # convert $t9 to ascii decimal
 addi $t9, $t9, 48           # convert decimal to ascii
 sb $t9, 0($s2)              # store one's place in currNumber
+
+addi $t9, $zero, 10
+div $t6, $t9
+mflo $t9                    # get digit in ten's place
