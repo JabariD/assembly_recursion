@@ -233,8 +233,11 @@ div $t6, $t9
 mfhi $t9                    # get digit in one's place
 # convert $t9 to ascii decimal
 addi $t9, $t9, 48           # convert decimal to ascii
-sb $t9, 0($s2)              # store one's place in currNumber
+sb $t9, 0($s2)              # store one's place in pos 0
 
 addi $t9, $zero, 10
 div $t6, $t9
 mflo $t9                    # get digit in ten's place
+# convert $t9 to ascii decimal
+addi $t9, $t9, 48           # convert decimal to ascii
+sb $t9, 1($s2)              # store ten's place in pos 1
