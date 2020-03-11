@@ -310,8 +310,14 @@ la $s2, baseNumber      # s2 = baseNumber
 la $s1, currNumber      # s1 = currNumber
 la $a3, tempAnswer      # a3 = tempAnswer
 
+
 addi $t3, $zero, 0      # baseNumber_index = 0
 CurrentBaseMultiplication:
 addi $t8, $zero, 0      # carry = 0
 addi $t6, $zero, 0      # currNumber_index = 0
 addi $s3, $zero, 0      # -- reset cN_index = 0
+
+CurrentBaseMultiplication2:
+add $s1, $s1, $t6       # add cN_index + currNumber address to get ch
+lb $t1, 0($s1)          # load number in currNumber to $t0 -- currNumber[x]
+sub $s1, $s1, $t6       # subtract cN_index - currNumber address to get starting position
