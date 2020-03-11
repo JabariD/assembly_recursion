@@ -252,3 +252,5 @@ sb $t9, 0($t6)              # store ascii representation of number in tempAnswer
 
 lb $t9, 1($s2)              # load ascii representation of number curretNumber
 sb $t9, 1($t6)              # store ascii representation of number in tempAnswer
+
+###############################
