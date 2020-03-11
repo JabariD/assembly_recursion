@@ -254,3 +254,6 @@ lb $t9, 1($s2)              # load ascii representation of number curretNumber
 sb $t9, 1($t6)              # store ascii representation of number in tempAnswer
 
 ###############################
+# if cMC !=0
+addi $t2, $zero, -1               # decrement t2 by 1.
+beq $t2, $s5, addToFinalAnswer    # check if t2 (cMC == # of times to multiply)
