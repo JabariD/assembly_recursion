@@ -87,13 +87,13 @@ checkerloopnext:
      
 properformat:
      # for each character until null key reached, increment counter, check if counter greater than 21 if true -> invalid, check that character in range, it passes
-     addi $t5, $zero, 21                # init check to see if more than 21 characters read
+     addi $t5, $zero, 21               # init check to see if more than 21 characters read
      addi $s4, $s4, 0                  # init counter to compare with 5
      lb $s1, 0($s6)                    # load character into $s1 
      
      beq $s4, $t5, invalid             # check counter > 21, invalid input
-     beq $s1, $t3, continue             # check NULL character, let's convert to decimal
-     beq $s1, $t4, continue             # check ENTER character, let's convert to decimal
+     beq $s1, $t3, continue            # check NULL character, let's convert to decimal
+     beq $s1, $t4, continue            # check ENTER character, let's convert to decimal
      
      slti $t7, $s1, 48                 # if char less than '0': true
      bne $t7, $zero, invalid           # for it to pass it should be 0(FALSE), so we know it's invalid 
@@ -122,10 +122,10 @@ properformatloop:
 continue:
 beq $s4, $zero, invalid # one last check
 
-addi $s7, $zero, 1   # base case checker
-addi $s6, $s4, 0     # s6 - base case checker
-addi $s5, $s5, -1    # s5 - multiply Controller
-addi $t2, $s5, 0     # cMC - copy Multiply Controller     
+addi $s7, $zero, 1      # base case checker
+addi $s6, $s4, 0        # s6 - base case checker
+addi $s5, $s5, -1       # s5 - multiply Controller
+addi $t2, $s5, 0        # cMC - copy Multiply Controller     
 
 la $a0, new_userInput   # pass input address to function
 la $s0, new_userInput   # get character by character
