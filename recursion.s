@@ -194,3 +194,6 @@ addi $s0, $s0, 1            # move to next character
 addi $s6, $s6, -1           # decrease num of ch i.e. base case checker
 
 jal recursive_converter     # recursively call our function
+
+basecase: 
+lb $t0, 0($s0)              # load ch into t0
