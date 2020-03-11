@@ -205,3 +205,9 @@ addi $s0, $s0, -1           # move to prev character
 # C would be 2 1.
 slti $t6, $t0, 58           # less than or equal to: '9'
 bne $t6, $zero, num_char    # if this is a number, we are good ---> go to next character
+
+slti $t6, $t0, 88           # less than or equal to '87(W)': true
+bne $t6, $zero, upper_char  # if this is a uppercase letter, we are good ---> go to next character
+     
+slti $t6, $t0, 120          # less than or equal to '119(w)': true
+bne $t6, $zero, lower_char  # if this is a lowercase letter, we are good ---> go to next character
