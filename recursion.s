@@ -241,3 +241,6 @@ mflo $t9                    # get digit in ten's place
 # convert $t9 to ascii decimal
 addi $t9, $t9, 48           # convert decimal to ascii
 sb $t9, 1($s2)              # store ten's place in pos 1
+
+
+# tempAnswer = currNumber
