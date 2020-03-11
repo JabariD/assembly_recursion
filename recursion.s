@@ -211,3 +211,11 @@ bne $t6, $zero, upper_char  # if this is a uppercase letter, we are good ---> go
      
 slti $t6, $t0, 120          # less than or equal to '119(w)': true
 bne $t6, $zero, lower_char  # if this is a lowercase letter, we are good ---> go to next character
+
+num_char:
+addi $t6, $t0, -48          # subtract by 0 to get decimal value
+j insertDigits              
+
+upper_char:                 
+addi $t6, $t0, -55          # subtract by a to get decimal value
+j insertDigits 
