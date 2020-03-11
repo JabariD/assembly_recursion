@@ -306,3 +306,7 @@ addi $s3, $zero, 0 # refresh to 0
 # $s7 - p_index, $a3 - tempAnswer, $k0 - characters in base. $k1 - starts at 0
 
 # multiply currNumber * baseNumber = tempAnswer; CMC-- ; # 2 FOR LOOPS!
+
+la $s2, baseNumber      # s2 = baseNumber
+la $s1, currNumber      # s1 = currNumber
+la $a3, tempAnswer      # a3 = tempAnswer
