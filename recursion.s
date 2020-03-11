@@ -295,3 +295,8 @@ sb $zero, 32($t6)
 sb $zero, 33($t6)
 sb $zero, 34($t6)
 sb $zero, 35($t6)
+
+
+# free variables   $s3, $a0
+addi $k1, $zero, 0 # refresh to 0
+addi $s3, $zero, 0 # refresh to 0
