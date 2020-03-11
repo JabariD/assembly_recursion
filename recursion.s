@@ -183,3 +183,5 @@ j exit                  # print error message then exit
 # Recursive Converter untouchable: 
 # s7 - basecase checcker: 1 ; s6 - num of characters; s5 - multiply controller; s0/a0: character
 recursive_converter:
+addi $sp, $sp -4            # create space for return address in stack
+sw $ra, 0($sp)              # store return address in stack
