@@ -180,8 +180,17 @@ la $a0, errorMSG        # in memory called error
 syscall                 # do it
 j exit                  # print error message then exit
 
+
 # Recursive Converter untouchable: 
 # s7 - basecase checcker: 1 ; s6 - num of characters; s5 - multiply controller; s0/a0: character
 recursive_converter:
 addi $sp, $sp -4            # create space for return address in stack
 sw $ra, 0($sp)              # store return address in stack
+
+
+beq $s6, $s7, basecase      # test if we have reached base case
+addi $s0, $s0, 1            # move to next character
+
+addi $s6, $s6, -1           # decrease num of ch i.e. base case checker
+
+jal recursive_converter     # recursively call our function
