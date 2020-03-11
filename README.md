@@ -20,4 +20,4 @@ Preliminary Step: Check tabs/spaces and valid characters.
 9. If done multiplying, check if done with characters: If no go to step 2, if yes continue.
 10. Print **finalAnswer**.
 
-Note:  This took incredibly long to do, with a lot of planning, fustration, and time. But I will say it was a learning exprience and taught me how to break a problem down into chunks. It also helped me learn efficient ways to debug a program.
+Note:  This took incredibly long to do, with a lot of planning, frustration, and time. But I will say it was a learning experience and taught me how to break a problem down into chunks. It also helped me learn efficient ways to debug a program.
