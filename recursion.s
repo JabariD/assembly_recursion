@@ -217,5 +217,9 @@ addi $t6, $t0, -48          # subtract by 0 to get decimal value
 j insertDigits              
 
 upper_char:                 
-addi $t6, $t0, -55          # subtract by a to get decimal value
+addi $t6, $t0, -55          # subtract by A to get decimal value
 j insertDigits 
+
+lower_char:
+addi $t6, $t0, -87          # subtract by a to get decimal value
+j insertDigits
