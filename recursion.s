@@ -244,3 +244,8 @@ sb $t9, 1($s2)              # store ten's place in pos 1
 
 
 # tempAnswer = currNumber
+la $s2, currNumber
+la $t6, tempAnswer
+
+lb $t9, 0($s2)              # load character currentNumber
+sb $t9, 0($t6)              # store that character in tempAnswer
