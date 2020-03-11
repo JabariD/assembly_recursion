@@ -301,7 +301,6 @@ sb $zero, 35($t6)
 addi $k1, $zero, 0 # refresh to 0
 addi $s3, $zero, 0 # refresh to 0
 
-
 # $s2 - baseNumber, $s1 - currNumber, $t3 - bN_index, $t6 - cN_index , $t8 = carry, $t9 = total, $a2 = to_add,
 # $s7 - p_index, $a3 - tempAnswer, $k0 - characters in base. $k1 - starts at 0
 
