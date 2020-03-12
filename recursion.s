@@ -120,6 +120,9 @@ properformatloop:
      
 # JAL into Base-33 Converter Function
 continue:
+addi $t7, $zero, 1
+beq $s4, $t7, check_if_invalid_zero
+continue_check_if_invalid_zero:
 beq $s4, $zero, invalid # one last check
 
 addi $s7, $zero, 1      # base case checker
@@ -646,3 +649,16 @@ j another_check_if_zero_loop_continue1
 another_check_if_zero_loop2:
 addi $t0, $t0, 48
 j another_check_if_zero_loop_continue2
+
+check_if_invalid_zero:
+la $k0, new_userInput
+lb $t9, 0($k0)
+addi $t9, $t9, -48
+beq $t9, $zero, print_check_if_invalid_zero
+j continue_check_if_invalid_zero
+
+print_check_if_invalid_zero:
+lb $a0, 0($k0)          # load byte
+li $v0, 11 
+syscall                 # print ch
+j exit
