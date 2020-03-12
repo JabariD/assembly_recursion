@@ -496,3 +496,12 @@ j clearTempAnswer
 continueclearTempAnswer:
 
 # tempAnswer = tempProduct
+la $a3, tempAnswer
+la $a0, tempProduct
+addi $v0, $zero, 50 
+addi $k0, $zero, 1
+settempAnswerequaltotempProduct:
+lb $t8, 0($a0)           # load byte from tempProduct
+sb $t8, 0($a3)           # store that byte into tempAnswer
+addi $k0, $k0, 1         # increment k0
+beq $k0, $v0, continuesettempAnswerequaltotempProduct
