@@ -353,3 +353,8 @@ addi $t9, $t9, 48       # convert decimal back to ascii
 sb $t9, 0($a3)          # store into p[p_index]
 
 sub $a3, $a3, $s7       # restore index
+ 
+addi $t6, $t6, 1        # cN_index++
+addi $s3, $s3, 1        # currNumber characters reached
+slti $a0, $s3, 2        # currNumber can only be as big as 2 characters!
+bne $a0, $zero, CurrentBaseMultiplication2  
