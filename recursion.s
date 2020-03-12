@@ -596,3 +596,8 @@ addi $k0, $k0, -48       # ascii to decimal
 beq $k0, $zero, laststoreAddyinReg
 addi $a3, $a3, -1        # move back to last character
 j lastRemaindercontinueloop
+
+laststoreRemainder:
+addi $gp, $gp, 48        # convert to ascii
+sb $gp, 0($t3) 
+addi $gp, $gp, -48       # convert back to decimal
