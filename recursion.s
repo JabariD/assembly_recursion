@@ -394,3 +394,11 @@ beq $t2, $s5, addToFinalAnswer
 la $s2, baseNumber      # s2 = baseNumber
 la $s1, tempAnswer      # s1 = tempAnswer
 la $a3, tempProduct     # a3 = tempProduct
+
+
+addi $t3, $zero, 0      # bN_index = 0
+addi $k1, $zero, 0
+loopCurrentBaseMultiplication:
+addi $t8, $zero, 0      # carry = 0
+addi $t6, $zero, 0      # cN_index = 0
+addi $s3, $zero, 0      # reset cN_index = 0
