@@ -536,3 +536,9 @@ j loopMultiplication
 addToFinalAnswer:
 
 # Add Final Answer + tempAnswer
+
+addi $t9, $zero, 0       # counter
+addi $s7, $zero, 50      # counter stop 50
+addi $v0, $zero, 10      # to get actual value and carry
+la $a3, tempAnswer       # a3 <- tempAnswer
+la $a1, finalAnswer      # a1 <- finalAnswer
