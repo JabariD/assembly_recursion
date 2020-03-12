@@ -376,3 +376,10 @@ addi $t8, $t8, 48       # convert to ascii
 sb $t8, 0($a3)          # store last carry in this value
 
 addi $t2, $t2 1         #  cMC-- END  #
+
+addi $k1, $zero, 0      # reset reg k1
+addi $s3, $zero, 0      # reset reg s3
+
+
+### ONE MULTIPLICATION DONE!!!!!!
+### Now we to multiply a LOOP to multiply tempAnswer * baseNumber based on the multiply controller
