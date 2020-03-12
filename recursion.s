@@ -326,3 +326,6 @@ sub $s1, $s1, $t6       # subtract cN_index - currNumber address to get starting
 add $s2, $s2, $t3       # add bN_index + baseNumber address to get ch
 lb $t0, 0($s2)          # load first ch in baseNumber to $t0 -- baseNumber[x]
 sub $s2, $s2, $t3       # subtract bN_index - baseNumber address to get starting position
+
+addi $t1, $t1, -48      # convert ascii to decimal
+addi $t0, $t0, -48      # convert ascii to decimal
