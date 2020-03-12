@@ -577,3 +577,9 @@ lastfindRemainderSpace:
 lb $k0, 0($a3)
 addi $k0, $k0, -48       # check if 0
 bne $k0, $zero, lastsaveRegasRemainder 
+
+lastRemaindercontinueloop:
+addi $s3, $s3, 1         # counter++
+addi $a3, $a3, 1         # move to next character
+beq $s3, $t6, laststoreRemainder
+j lastfindRemainderSpace
