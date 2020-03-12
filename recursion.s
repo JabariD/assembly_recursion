@@ -542,3 +542,9 @@ addi $s7, $zero, 50      # counter stop 50
 addi $v0, $zero, 10      # to get actual value and carry
 la $a3, tempAnswer       # a3 <- tempAnswer
 la $a1, finalAnswer      # a1 <- finalAnswer
+addToFinalSub:
+lb $t1, 0($a3)           # t1 = tempAnswer[x]
+lb $t0, 0($a1)           # t0 = finalAnswer[x]
+beq $t1, $zero, another_check_if_zero_loop1
+another_check_if_zero_loop_continue1:
+beq $t0, $zero, another_check_if_zero_loop2
