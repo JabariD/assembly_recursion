@@ -421,3 +421,8 @@ addi $t0, $t0, -48      # convert ascii to decimal
 mult $t0, $t1           # multiply currNumber[x] * baseNumber[x]
 mflo $t9                # total value
 add $a2, $t8, $t9       # to_add = carry + total
+# recover p[p_index] value
+add $s7, $t6, $t3       # p_index = bN_index + cN_index
+add $a3, $a3, $s7       # $ p_index + p_index start addreess
+lb $t9, 0($a3)          # load that value in #t9
+bne $t9, $zero, loop_check_if_zero
