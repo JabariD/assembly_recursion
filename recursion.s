@@ -492,3 +492,7 @@ addi $a0, $a0, 1
 addi $a3, $a3, 1
 beq $a0, $k0, continueclearTempAnswer
 j clearTempAnswer
+
+continueclearTempAnswer:
+
+# tempAnswer = tempProduct
