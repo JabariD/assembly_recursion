@@ -358,3 +358,11 @@ addi $t6, $t6, 1        # cN_index++
 addi $s3, $s3, 1        # currNumber characters reached
 slti $a0, $s3, 2        # currNumber can only be as big as 2 characters!
 bne $a0, $zero, CurrentBaseMultiplication2  
+
+
+addi $t3, $t3, 1        # bN_index++
+addi $k1, $k1, 1        # baseNumber characters reached
+slti $k0, $k1, 2        # baseNumber can only be as big as 2 characters!
+beq $k0, $zero, doneCurrentBaseMultiplication 
+
+j CurrentBaseMultiplication  
