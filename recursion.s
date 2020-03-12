@@ -402,3 +402,10 @@ loopCurrentBaseMultiplication:
 addi $t8, $zero, 0      # carry = 0
 addi $t6, $zero, 0      # cN_index = 0
 addi $s3, $zero, 0      # reset cN_index = 0
+
+loopCurrentBaseMultiplication2:
+add $s1, $s1, $t6
+lb $t1, 0($s1)          # load first ch in currNumber to $t0 -- tempAnswer[x]
+beq $t1, $zero, error_check_value_is_null
+continue_error_check_value_is_null:
+sub $s1, $s1, $t6
