@@ -554,3 +554,5 @@ addi $t0, $t0, -48       # convert ascii to decimal
 add $t8, $t0, $t1        # to_add
 add $a2, $gp, $t8        # total = to_add + carry
 div $a2, $v0
+mfhi $t0                 # p[i] <- (total) % 10
+mflo $gp                 # carry <- (total) / 10
