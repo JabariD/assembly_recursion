@@ -529,3 +529,10 @@ continueclearTempProduct:
  
 addi $t2, $t2, 1         # cMC -- copyMultiplyController++
 j loopMultiplication
+
+
+
+
+addToFinalAnswer:
+
+# Add Final Answer + tempAnswer
