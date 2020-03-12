@@ -556,3 +556,13 @@ add $a2, $gp, $t8        # total = to_add + carry
 div $a2, $v0
 mfhi $t0                 # p[i] <- (total) % 10
 mflo $gp                 # carry <- (total) / 10
+
+
+addi $t0, $t0, 48        # convert to ascii
+sb $t0, 0($a1)           # store t0 into finalAnswer.
+
+addi $a3, $a3, 1         # move to next character in tempAnswer
+addi $a1, $a1, 1         # move to next character in finalAnswer
+addi $t9, $t9, 1         # counter++
+beq $t9, $s7, finallydone
+j addToFinalSub
