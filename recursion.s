@@ -409,3 +409,11 @@ lb $t1, 0($s1)          # load first ch in currNumber to $t0 -- tempAnswer[x]
 beq $t1, $zero, error_check_value_is_null
 continue_error_check_value_is_null:
 sub $s1, $s1, $t6
+
+
+add $s2, $s2, $t3
+lb $t0, 0($s2)          # load first ch in baseNumber to $t0 -- baseNumber[x]
+sub $s2, $s2, $t3
+
+addi $t1, $t1, -48      # convert ascii to decimal
+addi $t0, $t0, -48      # convert ascii to decimal
