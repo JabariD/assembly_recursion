@@ -609,3 +609,19 @@ addi $t2, $s5, 0         # cMC // Probably not needed.
 lw $ra, 0($sp)
 addi $sp, $sp, 4
 jr $ra
+
+
+
+
+
+check_if_not_zero:
+addi $t9, $t9, -48
+j continue_check_if_not_zero
+
+loop_check_if_zero:
+addi $t9, $t9, -48 # check if 0 or null
+j loop_continue_check_if_not_zero
+
+error_check_value_is_null:
+addi $t1, $zero, 48
+j continue_error_check_value_is_null
