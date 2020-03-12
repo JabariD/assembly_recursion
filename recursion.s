@@ -341,3 +341,10 @@ bne $t9, $zero, check_if_not_zero
 
 continue_check_if_not_zero:
 add $t9, $t9, $a2       # p[p_index] + to_add 
+
+# ---- carry
+addi $v0, $zero, 10     # v0 = 10
+div $t9, $v0
+mflo $t8                # Carry = product[product_index] / 10
+mfhi $t9                # Product[product_index] = product[product_index] % 10
+# ---- carry
