@@ -383,3 +383,14 @@ addi $s3, $zero, 0      # reset reg s3
 
 ### ONE MULTIPLICATION DONE!!!!!!
 ### Now we to multiply a LOOP to multiply tempAnswer * baseNumber based on the multiply controller
+loopMultiplication:
+# if copyMultiplercontroller != 0; go into loop CMC--;
+beq $t2, $s5, addToFinalAnswer
+
+
+# Loop: Multiply tempAnswer * baseNumber = tempProduct; 
+
+# multiply tempAnswer * baseNumber = tempAnswer; CMC-- ; # 2 FOR LOOPS!
+la $s2, baseNumber
+la $s1, tempAnswer
+la $a3, tempProduct
