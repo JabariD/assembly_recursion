@@ -348,3 +348,8 @@ div $t9, $v0
 mflo $t8                # Carry = product[product_index] / 10
 mfhi $t9                # Product[product_index] = product[product_index] % 10
 # ---- carry
+
+addi $t9, $t9, 48       # convert decimal back to ascii
+sb $t9, 0($a3)          # store into p[p_index]
+
+sub $a3, $a3, $s7       # restore index
