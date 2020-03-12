@@ -524,3 +524,8 @@ beq $a0, $k0, continueclearTempProduct
 j clearTempProduct
 
 continueclearTempProduct:
+
+ # ------------------------------------------------------
+ 
+addi $t2, $t2, 1         # cMC -- copyMultiplyController++
+j loopMultiplication
