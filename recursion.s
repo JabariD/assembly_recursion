@@ -548,3 +548,9 @@ lb $t0, 0($a1)           # t0 = finalAnswer[x]
 beq $t1, $zero, another_check_if_zero_loop1
 another_check_if_zero_loop_continue1:
 beq $t0, $zero, another_check_if_zero_loop2
+another_check_if_zero_loop_continue2:
+addi $t1, $t1, -48       # convert ascii to decimal
+addi $t0, $t0, -48       # convert ascii to decimal
+add $t8, $t0, $t1        # to_add
+add $a2, $gp, $t8        # total = to_add + carry
+div $a2, $v0
