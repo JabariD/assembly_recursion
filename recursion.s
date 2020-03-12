@@ -511,3 +511,16 @@ addi $a3, $a3, 1         # next number in tempAnswer by 1
 j settempAnswerequaltotempProduct
 
 continuesettempAnswerequaltotempProduct:
+
+# clear tempProduct
+la $a3, tempProduct
+addi $k0, $zero, 50
+addi $a0, $zero, 0
+clearTempProduct:
+sb $zero, 0($a3)         # store zero in each byte
+addi $a0, $a0, 1         # counter++
+addi $a3, $a3, 1
+beq $a0, $k0, continueclearTempProduct
+j clearTempProduct
+
+continueclearTempProduct:
