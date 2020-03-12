@@ -605,3 +605,7 @@ addi $gp, $gp, -48       # convert back to decimal
 
 addi $s5, $s5, 1         # multiply controller -- MAIN
 addi $t2, $s5, 0         # cMC // Probably not needed.
+
+lw $ra, 0($sp)
+addi $sp, $sp, 4
+jr $ra
