@@ -338,3 +338,6 @@ add $s7, $t6, $t3       # p_index = bN_index + cN_index
 add $a3, $a3, $s7       # $ p_index + p_index start addreess
 lb $t9, 0($a3)          # load that value in #t9
 bne $t9, $zero, check_if_not_zero
+
+continue_check_if_not_zero:
+add $t9, $t9, $a2       # p[p_index] + to_add 
