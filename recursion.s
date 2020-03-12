@@ -583,3 +583,8 @@ addi $s3, $s3, 1         # counter++
 addi $a3, $a3, 1         # move to next character
 beq $s3, $t6, laststoreRemainder
 j lastfindRemainderSpace
+
+laststoreAddyinReg:
+add $t3, $zero, $a3      # save address in t3
+addi $a3, $a3, -1        # move back to last character
+j lastRemaindercontinueloop
