@@ -446,3 +446,11 @@ addi $t6, $t6, 1 # -- tempAnswer_index++
 addi $s3, $s3, 1 # -- currNumber characters reached
 slti $a0, $s3, 50 # -- estimate 50 chs just to be sure
 bne $a0, $zero, loopCurrentBaseMultiplication2 # --
+
+
+addi $t3, $t3, 1 # -- bN_index++
+addi $k1, $k1, 1 # -- baseNumber characters reached
+slti $k0, $k1, 2 # --
+beq $k0, $zero, loopdoneCurrentBaseMultiplication # --
+
+j loopCurrentBaseMultiplication # --
