@@ -475,3 +475,8 @@ addi $s3, $s3, 1         # increment counter
 addi $a3, $a3, 1         # move to next character
 beq $s3, $t6, storeRemainder
 j findRemainderSpace
+
+storeRemainder:
+addi $t8, $t8, 48        # convert to ascii
+sb $t8, 0($t3)           # store remainder in found index
+# --- end of multiplication
