@@ -321,3 +321,8 @@ CurrentBaseMultiplication2:
 add $s1, $s1, $t6       # add cN_index + currNumber address to get ch
 lb $t1, 0($s1)          # load number in currNumber to $t0 -- currNumber[x]
 sub $s1, $s1, $t6       # subtract cN_index - currNumber address to get starting position
+
+
+add $s2, $s2, $t3       # add bN_index + baseNumber address to get ch
+lb $t0, 0($s2)          # load first ch in baseNumber to $t0 -- baseNumber[x]
+sub $s2, $s2, $t3       # subtract bN_index - baseNumber address to get starting position
