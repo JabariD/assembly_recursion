@@ -505,3 +505,9 @@ lb $t8, 0($a0)           # load byte from tempProduct
 sb $t8, 0($a3)           # store that byte into tempAnswer
 addi $k0, $k0, 1         # increment k0
 beq $k0, $v0, continuesettempAnswerequaltotempProduct
+
+addi $a0, $a0, 1         # next number in tempProduct by 1
+addi $a3, $a3, 1         # next number in tempAnswer by 1
+j settempAnswerequaltotempProduct
+
+continuesettempAnswerequaltotempProduct:
