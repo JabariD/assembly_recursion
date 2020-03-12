@@ -588,3 +588,11 @@ laststoreAddyinReg:
 add $t3, $zero, $a3      # save address in t3
 addi $a3, $a3, -1        # move back to last character
 j lastRemaindercontinueloop
+
+lastsaveRegasRemainder:
+addi $a3, $a3, 1         # move to next character to check
+lb $k0, 0($a3)           # load it in k0
+addi $k0, $k0, -48       # ascii to decimal
+beq $k0, $zero, laststoreAddyinReg
+addi $a3, $a3, -1        # move back to last character
+j lastRemaindercontinueloop
