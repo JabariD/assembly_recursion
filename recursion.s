@@ -391,6 +391,6 @@ beq $t2, $s5, addToFinalAnswer
 # Loop: Multiply tempAnswer * baseNumber = tempProduct; 
 
 # multiply tempAnswer * baseNumber = tempAnswer; CMC-- ; # 2 FOR LOOPS!
-la $s2, baseNumber
-la $s1, tempAnswer
-la $a3, tempProduct
+la $s2, baseNumber      # s2 = baseNumber
+la $s1, tempAnswer      # s1 = tempAnswer
+la $a3, tempProduct     # a3 = tempProduct
