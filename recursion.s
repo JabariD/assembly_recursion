@@ -366,3 +366,13 @@ slti $k0, $k1, 2        # baseNumber can only be as big as 2 characters!
 beq $k0, $zero, doneCurrentBaseMultiplication 
 
 j CurrentBaseMultiplication  
+
+
+doneCurrentBaseMultiplication:
+# -------- near end of multiplcaion process 
+addi $s7, $t3, 1        # new_p_index =  bN_index + 1
+add $a3, $a3, $s7       # add to index
+addi $t8, $t8, 48       # convert to ascii
+sb $t8, 0($a3)          # store last carry in this value
+
+addi $t2, $t2 1         #  cMC-- END  #
