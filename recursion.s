@@ -625,3 +625,24 @@ j loop_continue_check_if_not_zero
 error_check_value_is_null:
 addi $t1, $zero, 48
 j continue_error_check_value_is_null
+
+storeAddyinReg:
+add $t3, $zero, $a3
+addi $a3, $a3, -1
+j Remaindercontinueloop
+
+saveRegasRemainder:
+addi $a3, $a3, 1
+lb $k0, 0($a3)
+addi $k0, $k0, -48 # ascii to decimal
+beq $k0, $zero, storeAddyinReg
+addi $a3, $a3, -1
+j Remaindercontinueloop
+
+another_check_if_zero_loop1:
+addi $t1, $t1, 48
+j another_check_if_zero_loop_continue1
+
+another_check_if_zero_loop2:
+addi $t0, $t0, 48
+j another_check_if_zero_loop_continue2
