@@ -417,3 +417,7 @@ sub $s2, $s2, $t3
 
 addi $t1, $t1, -48      # convert ascii to decimal
 addi $t0, $t0, -48      # convert ascii to decimal
+
+mult $t0, $t1           # multiply currNumber[x] * baseNumber[x]
+mflo $t9                # total value
+add $a2, $t8, $t9       # to_add = carry + total
