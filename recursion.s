@@ -437,20 +437,31 @@ mflo $t8                # Carry = product[product_index] / 10
 mfhi $t9                # Product[product_index] = product[product_index] % 10
 # ---- carry
 
-addi $t9, $t9, 48 # convert decimal back to ascii
-sb $t9, 0($a3)    # store into p[p_index]
+addi $t9, $t9, 48       # convert decimal back to ascii
+sb $t9, 0($a3)          # store into p[p_index]
 
-sub $a3, $a3, $s7 # restore index
+sub $a3, $a3, $s7       # restore index
  
-addi $t6, $t6, 1 # -- tempAnswer_index++
-addi $s3, $s3, 1 # -- currNumber characters reached
-slti $a0, $s3, 50 # -- estimate 50 chs just to be sure
+addi $t6, $t6, 1        # -- tempAnswer_index++
+addi $s3, $s3, 1        # -- currNumber characters reached
+slti $a0, $s3, 50       # -- estimate 50 chs just to be sure
 bne $a0, $zero, loopCurrentBaseMultiplication2 # --
 
 
-addi $t3, $t3, 1 # -- bN_index++
-addi $k1, $k1, 1 # -- baseNumber characters reached
-slti $k0, $k1, 2 # --
+addi $t3, $t3, 1        # -- bN_index++
+addi $k1, $k1, 1        # -- baseNumber characters reached
+slti $k0, $k1, 2        # --
 beq $k0, $zero, loopdoneCurrentBaseMultiplication # --
 
 j loopCurrentBaseMultiplication # --
+
+
+loopdoneCurrentBaseMultiplication:
+# -------- near end of multiplcaion process 
+# we need to get the character RIGHT AFTER THE LAST VALUE! THIS IS THE ALGORITHM TO DO IT:
+# HOLD COUNTER. WE LOOK FOR THE FIRST NON-ZERO (COUNTER++), WHEN THAT IS FOUND THE NEXT 0 WE FIND IS THE INDEX! (+ 2)
+# PUT CARRY RIGHT THERE!
+la $a3, tempProduct      # a3 = tempProduct
+la $t3, tempProduct      # t3 = potentialAddress
+addi $s3, $zero, 0       # counter
+addi $t6, $zero, 50
