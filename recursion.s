@@ -566,3 +566,10 @@ addi $a1, $a1, 1         # move to next character in finalAnswer
 addi $t9, $t9, 1         # counter++
 beq $t9, $s7, finallydone
 j addToFinalSub
+
+finallydone:
+# last carry bit <- gp
+la $a3, finalAnswer      #  t9
+la $t3, finalAnswer
+addi $s3, $zero, 0       # counter
+addi $t6, $zero, 50
