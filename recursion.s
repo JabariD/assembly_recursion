@@ -480,3 +480,15 @@ storeRemainder:
 addi $t8, $t8, 48        # convert to ascii
 sb $t8, 0($t3)           # store remainder in found index
 # --- end of multiplication
+
+# Copy tempProduct into tempAnswer # ------------------------------------
+# clear tempAnswer
+la $a3, tempAnswer
+addi $k0, $zero, 50      
+addi $a0, $zero, 0       # counter
+clearTempAnswer:
+sb $zero, 0($a3)         # set number to 0
+addi $a0, $a0, 1
+addi $a3, $a3, 1
+beq $a0, $k0, continueclearTempAnswer
+j clearTempAnswer
