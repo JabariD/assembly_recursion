@@ -573,3 +573,7 @@ la $a3, finalAnswer      #  t9
 la $t3, finalAnswer
 addi $s3, $zero, 0       # counter
 addi $t6, $zero, 50
+lastfindRemainderSpace:
+lb $k0, 0($a3)
+addi $k0, $k0, -48       # check if 0
+bne $k0, $zero, lastsaveRegasRemainder 
