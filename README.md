@@ -1,5 +1,10 @@
 # MIPS Recursion Project -- Payton Dennis
 
+## To Run:
+1. Download or install "MARS" or "QtSpim".
+2. Copy and paste the code in recursion.s
+3. Run with any input!
+
 ## @02877343 -- Base: 33
 
 *Note: I understand the directions were listed to use the STACK to store the result which would have been an easier method than I chose. But what made sense to me was to STORE my result using **.data** strings.*
